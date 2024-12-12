@@ -1,0 +1,91 @@
+*{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+   align-items:center;
+}
+header{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    & a{
+        color: green;
+        margin: 10px;
+        font-size: 23px;
+    }
+}
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & .options{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    & .number{
+        width: 70px;
+    }
+    & .unpass{
+        font-size: 20px;
+        border-bottom: 1px solid black;
+        padding: 10px;
+    }
+}
+input{
+    display: block;
+    border: none;
+    outline: none;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    transition: 0.3s;
+    font-size: 20px;
+}
+button{
+    border: none;
+    background-color:#283747;
+    padding: 10px 20px;
+    border-radius:10px;
+    text-transform: capitalize;
+    color: white;
+    font-size: 15px;
+    transition: 0.3s;
+    user-select: none;
+}
+button:active{
+    transform: scale(0.9);
+}
+.no{
+    border-color: red;
+    box-shadow: 0px 0px 10px red;
+}
+.password{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    background-color: #283747;
+    color: white;
+    padding: 10px;
+    box-shadow: 0 0 5px black ;
+    border-radius: 10px;
+    & .remove{
+        color: red;
+    }
+}
+.passwords{
+    width: 300px;
+    display: flex;
+    box-sizing:initial;
+    flex-direction: column;
+    justify-content: center;
+}

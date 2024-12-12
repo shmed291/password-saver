@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a><i class="fa-solid fa-lock"></i></a>
+        <h1>password saver</h1>
+    </header>
+    <main>
+        <div class="options">
+        <input class="number" value="15" type="number" placeholder="8-12">
+        <input class="pfor" type="text" maxlength="10" placeholder="pasword for">
+        <button onclick="pass()">generate</button>
+        </div>
+        <p class="unpass">password!</p>
+        <button onclick="add()">save</button>
+    </main>
+    <footer>
+        <div class="passwords">
+
+        </div>
+    </footer>
+    <script src="js.js" ></script>
+</body>
+</html>
