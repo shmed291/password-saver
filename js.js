@@ -89,7 +89,70 @@ function remove(){
         })
     })
 }
+
+////
+function showOP(){
+let showBtn = document.querySelector(".add-pen")
+let op =document.getElementById('op')
+let save = document.querySelector('.save')
+let cansel = document.querySelector('.cansel')
+let pass = document.querySelector('.pass-note')
+let name = document.querySelector('.name-note')
+
+showBtn.addEventListener('click',()=>{
+op.style.display = 'block'
+    showBtn.style.display = 'none' 
+     cansel.style.display = 'block'
+     save.removeAttribute('onclick')
+     save.setAttribute('onclick','noteSave()')     
+     cansel.classList.add('active')
+     cansel.classList.remove('no-active')
+})
+cansel.addEventListener('click',()=>{
+    save.removeAttribute('onclick')
+    save.setAttribute('onclick',"add()")
+    op.style.display = 'none'
+    showBtn.style.display = 'block' 
+    cansel.classList.remove('active')
+    cansel.classList.add('no-active')
+     pass.style.borderColor = 'black'
+     pass.style.boxShadow = 'none'
+     pass.value = ""
+     name.style.borderColor = 'black'
+     name.style.boxShadow = 'none'
+     name.value = ""
+
+})
+
+}
+function noteSave(){
+    let pass = document.querySelector('.pass-note')
+    let name = document.querySelector('.name-note')
+    if(pass.value.length < 8){
+        pass.style.borderColor = 'red'
+        pass.style.boxShadow = '0 0 10px red'
+    }else{
+        pass.style.borderColor = 'green'
+        pass.style.boxShadow = '0 0 10px green'
+    }
+    if(name.value === ""){
+        name.style.borderColor = 'red'
+        name.style.boxShadow = '0 0 10px red'
+    }else{
+        name.style.borderColor = 'green'
+        name.style.boxShadow = '0 0 10px green'  
+    }
+    if(pass.value.length >= 8 && name.value !== "" && pass.value.length <= 20){
+        localSavep.push(pass.value)
+        localSavef.push(name.value)
+        localStorage.setItem("pass",JSON.stringify(localSavep));
+        localStorage.setItem("name",JSON.stringify(localSavef));
+        location.reload()
+    }
+
+}
 window.onload =()=>{
     save()
     addRemove()
+    showOP()
 }

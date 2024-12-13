@@ -23,8 +23,17 @@
         <button onclick="pass()">generate</button>
         </div>
         <p class="unpass">password!</p>
-        <button onclick="add()">save</button>
+        <div class="add-to-save">
+        <button class="save" onclick="add()">save</button>  
+           <i class="fa-solid fa-pen add-pen"></i>
+           <a class="cansel no-active">cansel</a>
+     </div>
+            <div id="op" class="add-pass">
+                <input class="pass-note" type="text" maxlength="20" placeholder="password">
+                <input class="name-note" type="text" maxlength="10" placeholder="password for">
+            </div>
     </main>
+
     <footer>
         <div class="passwords">
 
