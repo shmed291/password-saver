@@ -2,6 +2,27 @@ const localSavep = localStorage.getItem("pass")?JSON.parse(localStorage.getItem(
 []
 const localSavef = localStorage.getItem("name")?JSON.parse(localStorage.getItem("name")) :
 []
+function addRemove(){
+    let plus = document.querySelector('.plus')
+    let minus = document.querySelector(".minus")
+    let limit = document.querySelector(".number") 
+    plus.addEventListener('click',()=>{
+        limit.textContent++
+        if(limit.textContent < 8){
+            limit.textContent++
+        }else if(limit.textContent > 20){
+            limit.textContent--
+        }
+    })
+    minus.addEventListener('click',()=>{
+        limit.textContent--
+        if(limit.textContent < 8){
+            limit.textContent++
+        }else if(limit.textContent > 20){
+            limit.textContent--
+        }
+    })
+}
 function pass(){
 let place = document.querySelector('.unpass')
 let pass = ""
@@ -13,8 +34,8 @@ let limit = document.querySelector(".number")
         ';', ':', '"', '\'', '<', '>', ',', '.', '/', '?', '~'
     ]
     let after = []
-    if(limit.value > 7 && limit.value <= 20){
-for(let i = 0;i<limit.value;i++){
+    if(limit.textContent > 7 && limit.textContent <= 20){
+for(let i = 0;i<limit.textContent;i++){
 
     let random = Math.floor(Math.random() * 68)
     after.push(indexs[random])
@@ -70,4 +91,5 @@ function remove(){
 }
 window.onload =()=>{
     save()
+    addRemove()
 }

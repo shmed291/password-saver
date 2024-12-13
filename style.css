@@ -29,6 +29,35 @@ main{
         display: flex;
         flex-direction: column;
         align-items: center;
+        & div{
+            display: flex;
+            align-items: center;
+            & p{
+                width:fit-content;
+                font-size: 20px;
+            }
+            & a{
+                width: 30px;
+                height: 30px;
+
+                border-radius: 50%;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                margin: 10px;
+                cursor: pointer;
+            }
+            & .plus{
+                background-color: green;
+                color: white;
+            }
+            & .minus{
+                background-color: red;
+                color: white;
+            }
+        }
     }
     & .number{
         width: 70px;
@@ -60,6 +89,7 @@ button{
     font-size: 15px;
     transition: 0.3s;
     user-select: none;
+    cursor: pointer;
 }
 button:active{
     transform: scale(0.9);
@@ -83,7 +113,7 @@ button:active{
     }
 }
 .passwords{
-    width: 300px;
+    width: 350px;
     display: flex;
     box-sizing:initial;
     flex-direction: column;
